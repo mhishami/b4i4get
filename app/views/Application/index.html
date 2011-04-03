@@ -7,7 +7,17 @@
     </p>
 #{/if}
 
-<form action="@{Application.sayHello()}" method="GET">
-    <input type="text" name="name" /> 
-    <input type="submit" value="Say hello!" />
-</form> 
+#{if todoList}
+	<div id="todo-header">
+		<h2>Todo List for ${user}</h2>
+	</div>
+
+	#{list items:todoList, as:'myList'}
+		#{displayList todoList:myList /}
+	#{/list}
+#{/if}
+#{else}
+	<div class="empty">
+		<p>You have not created any todo list yet</p>
+	</div>
+#{/else}

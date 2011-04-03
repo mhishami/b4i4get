@@ -1,0 +1,23 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+ 
+#{if flash.error}
+    <p style="color:#c00">
+        ${flash.error}
+    </p>
+#{/if}
+
+#{if todos}
+	<div id="todo-header">
+		<h2>${title}</h2>
+	</div>
+
+	#{list items:todos, as:'myTodos'}
+		#{displayTodo todos:myTodos /}
+	#{/list}
+#{/if}
+#{else}
+	<div class="empty">
+		<p>You have not created any todo list yet</p>
+	</div>
+#{/else}

@@ -40,4 +40,12 @@ public class User extends Model {
 		return find("byEmailAndPassword", email, password).first();
 	}
 	
+	public static User getUser(String email) {
+		return find("byEmail", email).first();
+	}
+	
+	@Override
+	public String toString() {
+		return email;
+	}
 }

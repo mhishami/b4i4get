@@ -13,8 +13,16 @@ TodoList(barbecue):
   user: hisham
   title: Make a barbecue this weekend
   addedAt: 2011-04-03
+  isDone: false
   
-Todo(buy):
+TodoList(back-to-kl):
+  user: hisham
+  title: Things to bring back to KL
+  addedAt: 2011-04-03
+  isDone: false
+
+Todo(buy-chickens):
+  todoList: barbecue
   task: Buy 3 whole chickens for grill
   completionDate: 2011-04-08
   addedAt: 2011-04-03

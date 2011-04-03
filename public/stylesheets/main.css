@@ -11,6 +11,9 @@ body {
     margin: auto;
 }
 
+body a { color: #fff; }
+body a:visited { color: #fff; }
+
 /** Blog header **/
 
 #header {
@@ -213,12 +216,12 @@ h3 span {
     font-weight: normal;
 }
 
-.comment {
-    width: 70%;
+.todo {
+    width: 100%;
     clear: both;
 }
 
-.comment .comment-metadata {
+.todo .todo-metadata {
     color: #869AB1;
     display: block;
     font-size: 50%;
@@ -228,13 +231,13 @@ h3 span {
     text-align: right;
 }
 
-.comment .comment-author {
+.todo .todo-author {
     font-size: 150%;
     font-weight: bold;
     display: block;
 }
 
-.comment .comment-content {
+.todo .todo-content {
     position: relative;
     background: #E4EAFF;
     color: #242C58;
@@ -247,7 +250,7 @@ h3 span {
     -moz-border-radius: 10px;
 }
 
-.comment .about {
+.todo .about {
     text-indent: -999em;
     display: block;
     width: 0; 
@@ -260,6 +263,15 @@ h3 span {
 	top: 4px;
 	left: -4px;
 }
+
+.todo .todo-content .todo-action { 
+	float: right;
+}
+
+.todo .todo-content .todo-action a { color: #242C58; }
+.todo .todo-content .todo-action a:visited { color: #242C58; }
+
+.todo .todo-content span.todo-done { text-decoration: line-through; }
 
 /** Form **/
 

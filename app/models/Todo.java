@@ -31,4 +31,8 @@ public class Todo extends Model {
 		this.addedAt = new Date();
 	}
 
+	@Override
+	public String toString() {
+		return this.task;
+	}
 }

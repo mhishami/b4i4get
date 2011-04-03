@@ -4,10 +4,13 @@
 
 # Home page
 GET     /                                       Application.index
-GET     /hello                                  Application.sayHello
+GET     /list/{id}                              Application.getTodoList
+GET		/list/{id}/done							Application.markTodoListDone
+
+GET		/todo/{id}								Application.getTodo
+GET		/todo/{id}/done							Application.markTodoCompleted
 
 # Administration
-*		/admin/?								Admin.index
 *		/admin              					module:crud
 
 # Map static resources from the /app/public folder to the /public path

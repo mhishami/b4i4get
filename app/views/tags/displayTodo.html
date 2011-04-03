@@ -1,0 +1,38 @@
+
+*{ display the todo list }*
+<div id="todo-container">
+	<div id="todo-list">
+	#{list items:_todos, as:'todo'}
+		<div class="todo">
+			<div class="todo-metadata">
+				<span class="todo-date">
+					${todo.addedAt.format('dd MMM yyyy')}
+				</span>
+			</div>
+			<div class="todo-content">
+				<div class="about">Detail: </div>
+				
+				#{if todo.isCompleted}
+				<span class="todo-done">
+					<span>${todo.task}</span>
+				</span>
+				<div class="todo-action">
+					<span>
+						<a href="@{Application.markTodoCompleted(todo.id, false)}">Undo</a>
+					</span>
+				</div>
+				#{/if}
+				#{else}
+				${todo.task}
+				<div class="todo-action">
+					<span>
+						<a href="@{Application.getTodo(todo.id)}">Edit</a> | 
+						<a href="@{Application.markTodoCompleted(todo.id, true)}">Done</a>
+					</span>
+				</div>
+				#{/else}
+			</div>
+		</div>
+	#{/list}
+	</div>
+</div>

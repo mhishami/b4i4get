@@ -18,23 +18,30 @@ public class TodoList extends Model {
 	public String title;	
 	
 	public Date addedAt;
+	public boolean isDone;
 	
 	@OneToMany(mappedBy="task", cascade=CascadeType.ALL)
-	public List<Todo> todoList;
+	public List<Todo> todos;
 
 	public TodoList(User user, String title) {
 		this.user = user;
 		this.title = title;
 		this.addedAt = new Date();
-		this.todoList = new ArrayList<Todo>();
+		this.isDone = false;
+		this.todos = new ArrayList<Todo>();
 	}
 	
 	public TodoList addTodo(String task, Date completionDate) {
 		Todo todo = new Todo(task, completionDate, this).save();
-		this.todoList.add(todo);
+		this.todos.add(todo);
 		this.save();
 		
 		return this;
+	}
+	
+	@Override
+	public String toString() {
+		return this.title;
 	}
 	
 }
