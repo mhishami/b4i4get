@@ -11,6 +11,36 @@
         #{get 'moreScripts' /}
     </head>
     <body>
-        #{doLayout /}
+    	<div id="container">
+    		<div id="header">
+    			<div id="logo">
+    				b4i4get
+    			</div>
+    			<ul id="tools">
+    				<li>
+    					#{if user}
+    					Welcome ${user}, <a href="@{Secure.logout()}">(Logout)</a>
+    					#{/if}
+    					#{else}
+    					<a href="@{Secure.login()}">Login</a>
+    					#{/else}
+    				</li>
+    			</ul>
+    			<div id="title">
+    				<span class="about">About this app</span>
+    				<h1><a href="#">${appTitle}</a></h1>
+    				<h2>${appDesc}</h2>
+    			</div>
+    		</div>
+    		
+    		<div id="body">
+        		#{doLayout /}
+    		</div>
+    		
+    		<div id="footer">
+    			&copy; 2011 ZayMobile Technology. All rights reserved.
+    		</div>
+    		
+    	</div>
     </body>
 </html>
