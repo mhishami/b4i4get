@@ -19,16 +19,19 @@
     			<ul id="tools">
     				<li>
     					#{if user}
-    					Welcome ${user}, <a href="@{Secure.logout()}">(Logout)</a>
+    					Welcome ${user}, <a href="@{Secure.logout()}">(Logout)</a>|
     					#{/if}
     					#{else}
-    					<a href="@{Secure.login()}">Login</a>
+    					Welcome guest, <a href="@{Secure.login()}">Login</a>|
     					#{/else}
     				</li>
+    				<li><a href="#">API</a>|</li>
+    				<li><a href="#">About Us</a>|</li>
+    				<li><a href="#">Contact Us</a></li>
     			</ul>
     			<div id="title">
     				<span class="about">About this app</span>
-    				<h1><a href="#">${appTitle}</a></h1>
+    				<h1><a href="@{Application.index()}">${appTitle}</a></h1>
     				<h2>${appDesc}</h2>
     			</div>
     		</div>

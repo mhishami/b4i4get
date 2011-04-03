@@ -35,6 +35,7 @@ body {
 }
 
 #tools {
+	font-size: .8em;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -42,10 +43,15 @@ body {
     right: 0;
     top: 30px;
     right: 20px;
+    width: 30em;
     color: #fff;
+    float: right;
 }
 
+#tools li { float: left; }
+
 #tools a {
+	padding: 0 5px;
     color: #fff;
     text-decoration: underline;
 }

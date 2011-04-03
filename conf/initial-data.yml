@@ -7,3 +7,16 @@ User(hisham):
   fullname: Hisham Ismail
   isAdmin: true
   addedAt: 2011-04-03
+  
+  
+TodoList(barbecue):
+  user: hisham
+  title: Make a barbecue this weekend
+  addedAt: 2011-04-03
+  
+Todo(buy):
+  task: Buy 3 whole chickens for grill
+  completionDate: 2011-04-08
+  addedAt: 2011-04-03
+  isCompleted: false
+  
