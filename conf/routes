@@ -4,9 +4,17 @@
 
 # Home page
 GET     /                                       Application.index
+GET     /hello                                  Application.sayHello
+
+# Administration
+*		/admin/?								Admin.index
+*		/admin              					module:crud
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
+
+# Import Secure routes
+*       /                                       module:secure
